@@ -1,0 +1,31 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "${BACKEND_PORT:-8000}:8000"
+    environment:
+      DATA_DIR: /app/data
+      STORAGE_DIR: /app/storage
+      CACHE_DIR: /app/storage/cache
+      FAVORITES_DIR: /app/storage/favorites
+      CORS_ORIGINS: "http://localhost:${FRONTEND_PORT:-5173}"
+    volumes:
+      - storage-data:/app/storage
+      - data-data:/app/data
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "${FRONTEND_PORT:-5173}:5173"
+    environment:
+      VITE_API_PROXY_TARGET: http://backend:8000
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  data-data:
+  storage-data:

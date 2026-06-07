@@ -1,0 +1,7 @@
+# Use com: docker compose -f docker-compose.yml -f docker-compose.host.yml up --build backend
+# Expõe backend no host network para acessar D-Bus da sessão Plasma.
+
+services:
+  backend:
+    network_mode: host
+    ports: !reset []

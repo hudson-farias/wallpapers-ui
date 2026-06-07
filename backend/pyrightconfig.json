@@ -1,0 +1,9 @@
+{
+  "include": ["."],
+  "exclude": ["venv", ".tmp-sync", "storage"],
+  "typeCheckingMode": "off",
+  "reportMissingTypeStubs": false,
+  "reportUntypedFunctionDecorator": false,
+  "reportUnusedCoroutine": false,
+  "reportUnnecessaryAsync": false
+}

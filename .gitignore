@@ -1,0 +1,20 @@
+*/.env
+.env
+*/venv/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+backend/data/
+backend/storage/
+backend/.tmp-sync/
+
+# Node / Svelte
+node_modules/
+.svelte-kit/
+build/
+dist/
+
+# Docker
+.applied/
