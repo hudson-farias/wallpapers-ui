@@ -1,4 +1,4 @@
-# wallpaper-ui
+# plasma-wallpaper-ui
 
 Interface web para browsear wallpapers, escolher monitor, crop (MVP) e aplicar no KDE Plasma.
 
